@@ -3,7 +3,7 @@
 $additional_header_info = '<style type="text/css">#page_title {text-align:center;}</style>';
 include('header.php'); ?>
 <!-- Container -->
-<div class="container">
+<div class="container" style="padding-top: 25px;">
 <div class="thing">
   <div class="row">
 	<div class="col-sm-2">
