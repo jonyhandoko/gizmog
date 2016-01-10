@@ -43,7 +43,7 @@ a:focus {
 .btn-black {
 	color: #ffffff;
 	background-color: #000000;
-	border-color: #ffec0f;
+/*	border-color: #ffec0f;*/
 	border-radius: 0;
 }
 .btn-black:hover,
@@ -985,7 +985,7 @@ a:focus {
 	border-left-color: #ffec0f;
 }
 .arrow-step.active p {
-	color: #fff;
+	color: #000;
 }
 
 .tabs-orange .nav-tabs {

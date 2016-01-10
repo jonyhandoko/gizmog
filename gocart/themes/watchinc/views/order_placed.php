@@ -1,7 +1,7 @@
 <?php include('header.php'); ?>
 
 <div class="product">
-	<div class="container-fluid">
+	<div class="container" style="padding-top: 25px;">
 		<div class="def-temp">
 			<div class="arrow-steps">
 				<div class="row">

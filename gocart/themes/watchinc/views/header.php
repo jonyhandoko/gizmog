@@ -113,14 +113,14 @@
 								<a href=""><i class="fa fa-home"></i></a>
 							</li>
 							<li class="dropdown yamm-fw">
-								<a class="dropdown-toggle cart-anchor" data-toggle="dropdown" role="button" aria-expanded="false" href="">WATCHES</a>
+								<a class="dropdown-toggle cart-anchor" data-toggle="dropdown" role="button" aria-expanded="false" href="">Watches</a>
 								<ul class="dropdown-menu def-dropdown" role="menu">
 									<li>
 										<div class="row">
 											<div class="col-sm-8">
 												<div class="row">
 													<div class="col-sm-12">
-														<h3>CATEGORIES</h3>
+														<h3>Categories</h3>
 													</div>
 													<div class="col-sm-6">
 														<ul class="list-unstyled">
@@ -143,16 +143,16 @@
 												</div>
 												<div class="row">
 													<div class="col-sm-12">
-														<h3>BRANDS</h3>
+														<h3>Brands</h3>
 													</div>
 													<div class="col-sm-6">
 														<ul class="list-unstyled">
-															<li><h5><a href="<?php echo base_url('/seiko');?>">SEIKO</a></h5></li>
+															<li><h5><a href="<?php echo base_url('/seiko');?>">Seiko</a></h5></li>
 														</ul>
 													</div>
 													<div class="col-sm-6">
 														<ul class="list-unstyled">
-															<li><h5><a href="<?php echo base_url('/seiko');?>">ALBA</a></h5></li>
+															<li><h5><a href="<?php echo base_url('/seiko');?>">Alba</a></h5></li>
 														</ul>
 													</div>
 												</div>
@@ -165,19 +165,19 @@
 								</ul>
 								<span class="arrow"></span>
 							</li>
-							<li><a href="<?php echo base_url('/strap');?>">STRAP</a></li>
-							<li><a href="<?php echo base_url('/new');?>">NEWS</a></li>
-							<li><a href="<?php echo base_url('/sale');?>">SALE</a></li>
-							<li><a href="<?php echo base_url('/blog');?>">ARTICLE</a></li>
-							<li><a href="<?php echo base_url('/cart/confirmation_payment');?>">CONFIRM PAYMENT</a></li>
+							<li><a href="<?php echo base_url('/strap');?>">Strap</a></li>
+							<li><a href="<?php echo base_url('/new');?>">News</a></li>
+							<li><a href="<?php echo base_url('/sale');?>">Sale</a></li>
+							<li><a href="<?php echo base_url('/blog');?>">Article</a></li>
+							<li><a href="<?php echo base_url('/cart/confirmation_payment');?>">Confirm Payment</a></li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right text-center def-list">
 							<?php if($this->Customer_model->is_logged_in(false, false)):?>
 								<li>
-									<a href="<?php echo base_url('/secure/my_account');?>">WELCOME, <?php echo strtoupper($this->customer['firstname']);?>!</a>
+									<a href="<?php echo base_url('/secure/my_account');?>">Welcome, <?php echo strtoupper($this->customer['firstname']);?>!</a>
 								</li>
 								<li>
-									<a href="<?php echo base_url('/secure/logout');?>" class="active">SIGN OUT</a>
+									<a href="<?php echo base_url('/secure/logout');?>" class="active">Sign out</a>
 								</li>
 								<?php else:?>
 <!--
