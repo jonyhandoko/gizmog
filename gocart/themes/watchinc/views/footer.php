@@ -73,6 +73,10 @@
 		<script src="<?php echo base_url('gocart/themes/'.$this->config->item('theme').'/js/plug.js');?>"></script>
 		<script src="<?php echo base_url('gocart/themes/'.$this->config->item('theme').'/js/devs.js');?>"></script>
 		<script src="<?php echo base_url('gocart/themes/'.$this->config->item('theme').'/js/script.js');?>"></script>
+		<script src="<?php echo base_url('gocart/themes/'.$this->config->item('theme').'/js/jquery.browser.min.js');?>"></script>
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+		<!-- Go to www.addthis.com/dashboard to customize your tools -->
+		<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-567e6757247a22e1" async="async"></script>
 
 	</body>
 </html>

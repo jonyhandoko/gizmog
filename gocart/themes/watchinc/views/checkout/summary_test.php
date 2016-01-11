@@ -2,396 +2,318 @@
 
 
 <?php if(!$login_check):?>
-<!-- Container -->
-<div class="container">
-	<div class="greet">
-		<h3>HELLO VALUE CUSTOMER</h3>
-		<p>It Looks Like you wish to order without creating an account. So complete the form address below</p>
-	</div>
-	<div class="thing">
-		<div class="row">
-			<div class="col-sm-2 col-md-4"></div>
-			<div class="col-sm-8 col-md-4">
-				<?php echo form_open('secure/login', array('class'=>'form-horizontal form-clean', 'role'=>'form'))?>
-					<div class="form-group">
-						<div class="col-sm-12">
-							<input type="text" class="form-control" name="email" placeholder="username">
+
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="form-login">
+							<div class="greet">
+								<h3>HELLO VALUE CUSTOMER</h3>
+								<p>It Looks Like you wish to order without creating an account. So complete the form address below</p>
+							</div>
+							<?php echo form_open('secure/login', array('class'=>'form-horizontal', 'role'=>'form'))?>
+								<div class="form-group">
+									<div class="col-sm-12">
+										<input type="text" class="form-control" name="email" placeholder="Username">
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-sm-12">
+										<input type="password" class="form-control" name="password" placeholder="Password">
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-sm-12">
+										<input type="hidden" value="checkout/order_summary" name="redirect"/>
+										<input type="hidden" value="submitted" name="submitted"/>
+										<button type="submit" class="btn btn-block btn-orange">LOG IN</button>
+									</div>
+								</div>
+							</form>
 						</div>
 					</div>
-					<div class="form-group">
-						<div class="col-sm-12">
-							<input type="password" class="form-control" name="password" placeholder="password">
+					<div class="col-sm-2">
+						<h1 class="form-intersection">OR</h1>
+					</div>
+					<div class="col-sm-6">
+						<div class="form-register">
+							<div class="greet">
+								<h3>NEW CUSTOMER</h3>
+								<p>It Looks Like you wish to order without creating an account. So complete the form address below</p>
+							</div>
+							<?php echo form_open('secure/register', array('class'=>'form-horizontal', 'role'=>'form')); ?>
+								<div class="form-group">
+									<div class="col-sm-12">
+										<input type="email" class="form-control" name="email" placeholder="Email">
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-sm-6">
+										<input type="password" class="form-control" name="password" placeholder="Password">
+									</div>
+									<div class="col-sm-6">
+										<input type="password" class="form-control" name="confirm" placeholder="Confirm Password">
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-sm-6">
+										<input type="text" class="form-control" name="firstname" placeholder="First Name">
+									</div>
+									<div class="col-sm-6">
+										<input type="text" class="form-control" name="lastname" placeholder="Last Name">
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-sm-12">
+										<input type="text" class="form-control" name="address1" placeholder="Address">
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-sm-12">
+										<input type="text" class="form-control number" name="zip" placeholder="Zip Code">
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-sm-12">
+										<!-- <?php echo form_dropdown('province_id', $provinces_menu,  set_value('province_id', ''), '  id="f_province_id" class="form-control"');?> -->
+										<input type="text" class="form-control" name="city" placeholder="City">
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-sm-12">
+										<input type="text" class="form-control number" name="phone" placeholder="Phone Number">
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-sm-12">
+									<button type="submit" class="btn btn-block btn-orange">REGISTER</button>
+									</div>
+								</div>
+							</form>
 						</div>
 					</div>
-					<div class="form-group">
-						<div class="col-sm-12">
-							<input type="hidden" value="checkout/order_summary" name="redirect"/>
-							<input type="hidden" value="submitted" name="submitted"/>
-							<button type="submit" class="btn btn-block btn-maroon">LOG IN</button>
-						</div>
-					</div>
-				</form>
+				</div>
 			</div>
-			<div class="col-sm-2 col-md-4"></div>
-		</div>
-		<div class="greet">
-			<h3>NEW CUSTOMER</h3>
-			<p>It Looks Like you wish to order without creating an account. So complete the form address below</p>
-		</div>
-		<div class="row">
-			<div class="col-sm-2 col-md-4"></div>
-			<div class="col-sm-8 col-md-4">
-				<form class="form-horizontal form-clean" role="form">
-					<div class="form-group">
-						<div class="col-sm-6">
-							<input type="text" class="form-control" name="firstName" placeholder="first name">
-						</div>
-						<div class="col-sm-6">
-							<input type="text" class="form-control" name="lastName" placeholder="last name">
-						</div>
-					</div>
-					<div class="form-group">
-						<div class="col-sm-12">
-							<input type="text" class="form-control" name="address" placeholder="address">
-						</div>
-					</div>
-					<div class="form-group">
-						<div class="col-sm-12">
-							<input type="text" class="form-control number" name="zipCode" placeholder="zip code">
-						</div>
-					</div>
-					<div class="form-group">
-						<div class="col-sm-12">
-							<input type="text" class="form-control" name="city" placeholder="city">
-						</div>
-					</div>
-					<div class="form-group">
-						<div class="col-sm-12">
-							<input type="text" class="form-control number" name="phoneNumber" placeholder="phone number">
-						</div>
-					</div>
-					<div class="form-group">
-						<div class="col-sm-12">
-							<input type="email" class="form-control" name="email" placeholder="email">
-						</div>
-					</div>
-					<div class="form-group">
-						<div class="col-sm-12">
-							<button type="submit" class="btn btn-block btn-maroon">CONTINUE</button>
-						</div>
-					</div>
-				</form>
-			</div>
-			<div class="col-sm-2 col-md-4"></div>
-		</div>
-	</div>
-</div>
-<!-- ./Container -->
 
 <?php else: ?>
-<script>
-	$(document).ready(function() {
-		<?php if(isset($customer['ship_address'])):?>
-			$.post('<?php echo site_url('checkout/customer_details');?>', function(data){
-				//populate the form with their information
-				$('#customer_info_fields').html(data);
-				//$('input:button, input:submit, button').button();
-			});
-		<?php else:	?>
-			get_customer_form();
-		<?php endif;?>
-	});
 
-	function get_customer_form() {
-		//the loader will only show if someone is editing their existing information
-		$('#save_customer_loader').show();
-		//hide the button again
-		$('#submit_button_container').hide();
-
-		//remove the shipping and payment forms
-		$('#shipping_payment_container').html('<div class="checkout_block"><img alt="loading" src="<?php echo base_url('images/ajax-loader.gif');?>"/><br style="clear:both;"/></div>').hide();
-		$.post('<?php echo site_url('checkout/customer_form'); ?>', function(data){
-			//populate the form with their information
-			$('#customer_info_fields').html(data);
-			//$('input:button, input:submit, button').button();
-		});
-	}
-
-	// some behavior controlling global variables
-	var logged_in_user = <?php if($this->Customer_model->is_logged_in(false, false)) echo "true"; else echo "false"; ?>;
-
-	var shipping_required = <?php echo ($this->go_cart->requires_shipping()) ? 'true' : 'false'; ?>;
-	var shipping = Array();
-	var shipping_choice = '<?php $shipping=$this->go_cart->shipping_method(); if($shipping) print_r($shipping); ?>';
-
-	var addr_context = '';
-	var ship_to_bill_address = <?php if(isset($customer['ship_to_bill_address'])) { echo $customer['ship_to_bill_address']; } else { echo 'false'; } ?>;
-	var addresses;
-	var cart_total = <?php echo $this->go_cart->total(); ?>;
-
-	// Set payment info
-	function submit_payment_method() {
-		// clear_errors();
-		errors = false;
-
-		/* if (document.theForm.jqdemo1.checked == false) {
-			alert ('Please check all confirmed boxes!');
-			document.theForm.jqdemo1.focus();
-			return false;
-		} else if( document.theForm.jqdemo2.checked == false) {
-			alert ('Please check all confirmed boxes!');
-			document.theForm.jqdemo2.focus();
-			return false;
-		} else if (document.theForm.jqdemo3.checked == false) {
-			alert ('Please check all confirmed boxes!');
-			document.theForm.jqdemo3.focus();
-			return false;
-		} else {
-			// $('#redirect_path').val('checkout');
-			// return true;
-		} */
-
-		// verify a shipping method is chosen
-		/* if (shipping_required && $('input:radio[name=shipping_input]:checked').val() === undefined && $('input:radio[name=shipping_input]').length > 0) {
-			display_error('shipping', '<?php echo lang('error_choose_shipping');?>');
-			errors = true;
-		} */
-
-		// stop here if we have problems
-		if (errors) {
-			return false;
-		}
-
-		// send the customer data again and then submit the order
-		save_order();
-	}
-
-	function save_order() {
-		// submit additional order details
-		// $.post('<?php echo site_url('checkout/save_additional_details');?>', $('#additional_details_form').serialize(), function() {
-			// $('#order_submit_form').trigger('submit');
-			// thus must be a callback, otherwise there is a risk of the form submitting without the additional details saved
-			// if we need to save a payment method
-		if (cart_total > 0) {
-			// frm_data = $('#pmnt_form_'+chosen_method).serialize();
-			/* frm_data = $('input:radio[name=payment_method]:checked').serialize();
-			if ($('input:radio[name=payment_method]:checked').val()=='paypal_express') {
-
-			$.post('<?php echo site_url('checkout/save_payment_method');?>', frm_data, function(response) {
-				// alert(response);
-				if (typeoresponse != "object") {
-					display_error('payment', '<?php echo lang('error_save_payment') ?>');
-					return;
-				}
-
-				if (response.status=='success') {
-					// send them on to place the order
-					$('#order_submit_form').trigger('submit');
-				} else if(response.status=='error') {
-					display_error('payment', response.error);
-				}
-			}, 'json');
-		} else if ($('input:radio[name=payment_method]:checked').val()=='bank_transfer') {
-			$.post('<?php echo site_url('checkout/save_payment_method');?>', frm_data, function(response) {
-				if (typeof response != "object") {
-					display_error('payment', '<?php echo lang('error_save_payment') ?>');
-					return;
-				}
-
-				if (response.status=='success') {
-					// send them on to place the order
-					$('#order_submit_form').trigger('submit');
-				} else if(response.status=='error') {
-					display_error('payment', response.error);
-				}
-			}, 'json');
-		} else {
-			alert("Please choose payment method");
-		} */
-			$('#order_submit_form').trigger('submit');
-		}
-	}
-</script>
-
-<!-- Container -->
-<form id="order_submit_form" action="<?php echo site_url('checkout/place_order'); ?>" name="theForm" method="post">
-<div class="product">
-	<div class="container-fluid">
-		<div class="def-temp">
-			<div class="arrow-steps">
-				<div class="row">
-					<div class="col-xs-3">
-						<div class="arrow-step">
-							<p>CART</p>
-						</div>
-					</div>
-					<div class="col-xs-3">
-						<div class="arrow-step">
-							<p>CHECKOUT</p>
-						</div>
-					</div>
-					<div class="col-xs-3">
-						<div class="arrow-step active">
-							<p>CONFIRM ORDER</p>
-						</div>
-					</div>
-					<div class="col-xs-3">
-						<div class="arrow-step">
-							<p>THANK YOU</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="thing">
-			<div class="row">
-				<div class="col-md-2"></div>
-				<div class="col-sm-6 col-md-4">
-					<div style="border: 1px solid #CCC; padding: 10px 30px; margin-bottom: 15px;">
-						<h3 class="title" style="margin-top: 10px;"><span class="orange">SHIPPING</span> ADDRESS</h3>
-						<p><b>NAME :</b> <span>jonyeeee</span> <span>handokoaaa</span></p>
-						<p><b>ADDRESS :</b> <span>pluit timue 2</span></p>
-						<p><b>CITY : </b> <span>Ambon</span></p>
-						<p><b>ZIP CODE : </b> <span>111</span></p>
-						<p><b>PHONE NUMBER : </b> 01231231231</p>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-4">
-					<div style="border: 1px solid #CCC; padding: 10px 30px; margin-bottom: 15px;">
-						<h3 class="title" style="margin-top: 10px;"><span class="orange">PAYMENT</span> METHOD</h3>
-						<p>BANK TRANSFER</p>
-					</div>
-					<div style="border: 1px solid #CCC; padding: 10px 30px; margin-bottom: 15px;">
-						<h3 class="title" style="margin-top: 10px;"><span class="orange">DELIVERY</span> METHOD</h3>
-						<p>JNE REG - 45000</p>
-					</div>
-				</div>
-				<div class="col-md-2"></div>
-			</div>
-			<div class="row">
-				<div class="col-md-2"></div>
-				<div class="col-sm-12 col-md-8">
-					<div style="border: 1px solid #CCC; padding: 10px 30px; margin-bottom: 15px;">
-						<h3 class="title" style="margin-top: 10px;"><span class="orange">ORDER</span> SUMMARY</h3>
-						<div class="panel panel-as-table">
-							<div class="panel-heading">
-								<div class="row">
-									<div class="col-sm-6">
-										<p>PRODUCT</p>
+			<div class="product checkout">
+				<div class="container" style="padding-top: 25px">
+					<div class="def-temp">
+						<div class="arrow-steps">
+							<div class="row">
+								<div class="col-xs-3">
+									<div class="arrow-step">
+										<p>CART</p>
 									</div>
-									<div class="col-sm-2">
-										<p class="text-center">PRICE</p>
+								</div>
+								<div class="col-xs-3">
+									<div class="arrow-step">
+										<p>CHECKOUT</p>
 									</div>
-									<div class="col-sm-2">
-										<p class="text-center">QUANTITY</p>
+								</div>
+								<div class="col-xs-3">
+									<div class="arrow-step active">
+										<p>CONFIRM ORDER</p>
 									</div>
-									<div class="col-sm-2">
-										<p class="text-center">TOTAL</p>
+								</div>
+								<div class="col-xs-3">
+									<div class="arrow-step">
+										<p>THANK YOU</p>
 									</div>
 								</div>
 							</div>
-							<div class="panel-body">
-								<?php
-								$grandtotal = 0;
-								foreach ($this->go_cart->contents() as $cartkey=>$product):?>
-									<div class="row">
-										<div class="col-sm-6">
-											<div class="media">
-												<div class="pull-left">
-													<img class="media-object" height="100" src="<?php echo base_url('uploads/product/thumb/'.$product['images']);?>" alt="cart-2.jpg">
-												</div>
-												<div class="media-body">
-													<p><?php echo $product['name']; ?></p>
-												</div>
-											</div>
-										</div>
-										<div class="col-sm-2">
-											<div class="row">
-												<div class="col-xs-6 col-sm-12">
-													<p class="price text-center"><?php echo format_currency($product['price']); ?></p>
-												</div>
-											</div>
-										</div>
-										<div class="col-sm-2">
-											<div class="row">
-												<div class="col-xs-6 col-sm-12">
-													<p class="price text-center"><?php echo $product['quantity'] ?></p>
-												</div>
-											</div>
-										</div>
-										<div class="col-sm-2">
-											<div class="row">
-												<div class="col-xs-6 col-sm-12">
-													<p class="price text-center"><?php echo format_currency($product['price']*$product['quantity']); ?></p>
-												</div>
-											</div>
-										</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-4">
+								<div class="payment-box">
+									<h3 class="title"><span class="orange">SHIPPING</span> ADDRESS</h3>
+									<div class="detail">
+										<?php
+											$ship	= $customer['ship_address'];
+										?>
+										<p><b>NAME :</b> <span><?php echo $ship['firstname'];?></span> <span><?php echo $ship['lastname'];?></span></p>
+										<p><b>ADDRESS :</b> <span><?php echo $ship['address1'];?> <?php echo (!empty($ship['address2']))?$ship['address2'].'':'';?></span></p>
+										<p><b>CITY : </b> <span><?php echo $ship['province'];?></span></p>
+										<p><b>ZIP CODE : </b> <span><?php echo $ship['zip'];?></span></p>
+										<p><b>PHONE NUMBER : </b> <?php echo $ship['phone'];?></p>
 									</div>
-								<?php
-								endforeach;
-								?>
+								</div>
+								<div class="payment-box">
+									<h3 class="title"><span class="orange">PAYMENT</span> METHOD</h3>
+									<div class="detail">
+										<p>
+											<?php 
+												$paymentMethod = $this->go_cart->payment_method();
+												if($paymentMethod['description']=='Doku Payment'):
+													//echo '<img src="http://localhost:8080/watchinc/images/watchinc/method/credit-doku.png" class="bank-img"> ';
+												endif;
+												echo $paymentMethod['description'];
+											?>
+										</p>
+									</div>
+								</div>
+								<div class="payment-box">
+									<h3 class="title"><span class="orange">DELIVERY</span> METHOD</h3>
+									<div class="detail">
+										<p><?php echo $this->go_cart->shipping_method()." - ".$this->go_cart->shipping_cost();?></p>
+									</div>
+								</div>
 							</div>
-							<div class="panel-footer" style="background-color: transparent;">
-								<div class="divider">
-									<div class="sum light no-discount">
-										<div class="row">
-											<div class="col-sm-6"></div>
-											<div class="col-xs-6 col-sm-4">
-												<p>Total Item Price</p>
-											</div>
-											<div class="col-xs-6 col-sm-2">
-												<p><?php echo format_currency($this->go_cart->subtotal());?></p>
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-sm-6"></div>
-											<div class="col-xs-6 col-sm-4">
-												<p>Delivery Costs</p>
-											</div>
-											<div class="col-xs-6 col-sm-2">
-												<p><?php echo "<span class='shipping'>".format_currency($this->go_cart->shipping_cost())."</span>";?></p>
+							<div class="col-sm-8">
+								<form id="order_submit_form" action="<?php echo site_url('checkout/place_order'); ?>" name="theForm" method="post">
+									<div class="order-box">
+										<h3 class="title"><span class="orange">ORDER</span> SUMMARY</h3>
+										<div class="cart">
+											<div class="view-cart">
+												<div class="row">
+													<div class="col-xs-12">
+														<div class="panel">
+															<div class="panel-heading">
+																<div class="row">
+																	<div class="col-sm-6">
+																		<p>PRODUCT</p>
+																	</div>
+																	<div class="col-sm-2">
+																		<p>PRICE</p>
+																	</div>
+																	<div class="col-sm-2">
+																		<p>QUANTITY</p>
+																	</div>
+																	<div class="col-sm-2">
+																		<p>TOTAL</p>
+																	</div>
+																</div>
+															</div>
+															<div class="panel-body">
+																<?php
+																$grandtotal = 0;
+																$subtotal = 0;
+																foreach ($this->go_cart->contents() as $cartkey=>$product):
+																?>
+																	<div class="row">
+																		<div class="col-sm-6">
+																			<div class="media">
+																				<div class="pull-left">
+																					<img class="media-object" width="100" src="<?php echo base_url('uploads/product/thumb/'.$product['images']);?>" alt="cart-2.jpg">
+																				</div>
+																				<div class="media-body">
+																					<p class="media-heading"><?php echo $product['name']; ?></p>
+																				</div>
+																			</div>
+																		</div>
+																		<div class="col-sm-2">
+																			<div class="row">
+																				<div class="col-xs-6 col-sm-12">
+																					<p class="price"><?php echo format_currency($product['base_price']); ?></p>
+																				</div>
+																			</div>
+																		</div>
+																		<div class="col-sm-2">
+																			<div class="row">
+																				<div class="col-xs-6 col-sm-12">
+																					<p class="quantity"><?php echo $product['quantity'] ?></p>
+																				</div>
+																			</div>
+																		</div>
+																		<div class="col-sm-2">
+																			<div class="row">
+																				<div class="col-xs-6 col-sm-12">
+																					<p class="price"><?php $subtotal = $product['base_price'] * $product['quantity']; echo format_currency($subtotal); $grandtotal += $subtotal; ?></p>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																<?php endforeach;?>
+															</div>
+															<div class="panel-footer">
+																<div class="row">
+																	<div class="col-sm-6"></div>
+																	<div class="col-sm-4">
+																		<p>Total Item Price</p>
+																	</div>
+																	<div class="col-sm-2">
+																		<p><?php echo format_currency($this->go_cart->subtotal());?></p>
+																	</div>
+																</div>
+																<div class="row">
+																	<div class="col-sm-6"></div>
+																	<div class="col-sm-4">
+																		<p>Delivery Costs</p>
+																	</div>
+																	<div class="col-sm-2">
+																		<p><?php echo "<span class='shipping'>".format_currency($this->go_cart->shipping_cost())."</span>";?></p>
+																	</div>
+																</div>
+																<div class="row">
+																	<div class="col-sm-6"></div>
+																	<div class="col-sm-4">
+																		<p>
+																		<!--Packing Kayu <a href="#" data-toggle="tooltip" data-placement="top" title="Biaya IDR 10.500"><i class="fa fa-question" style="color: black"></i></a>
+																		
+																		&-->
+																		
+																		Asuransi <a href="#" data-toggle="tooltip" data-placement="top" title="Insurance for 0.2% of total order plus IDR 5.000"><i class="fa fa-question" style="color: black"></i></a></p>
+																	</div>
+																	<div class="col-sm-2">
+																		<p><?php echo "<span class='shipping'>".format_currency($this->go_cart->taxable_total())."</span>";?></p>
+																	</div>
+																</div>
+																<?php if($this->go_cart->group_discount()>0):?>
+																<div class="row">
+																	<div class="col-sm-6"></div>
+																	<div class="col-sm-4">
+																		<p>Member Discount</p>
+																	</div>
+																	<div class="col-sm-2">
+																		<p>( <?php echo "<span class='shipping'>".format_currency($this->go_cart->group_discount())."</span>";?> )</p>
+																	</div>
+																</div>
+																<?php endif;?>
+																<div class="row">
+																	<div class="col-sm-6"></div>
+																	<div class="col-sm-4">
+																		<p>Total</p>
+																	</div>
+																	<div class="col-sm-2">
+																		<p><?php echo "<span class='grandtotal'>".format_currency($this->go_cart->total())."</span>"; ?></p>
+																	</div>
+																</div>
+																<div class="row">
+																	<div class="col-sm-3"></div>
+																	<div class="col-sm-6">
+																		<input id="redirect_path" type="hidden" name="redirect" value=""/>
+																		<input type="hidden" name="process_order" value="true">
+																		<br><br>
+																		<button type="submit" class="btn btn-block btn-black">
+																			<?php if($paymentMethod['description']=="Doku Payment"):?>
+																				PAID NOW
+																			<?php else:?>
+																				CONFIRM ORDER
+																			<?php endif;?>
+																		</button>
+																	</div>
+																	<div class="col-sm-3"></div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
-								</div>
-								<div class="divider off">
-								<div class="total light">
-									<div class="row">
-										<div class="col-sm-6"></div>
-										<div class="col-xs-6 col-sm-4">
-											<p>Total</p>
-										</div>
-										<div class="col-xs-6 col-sm-2">
-											<p><?php echo "<span class='grandtotal'>".format_currency($this->go_cart->total())."</span>"; ?></p>
-										</div>
-									</div>
-								</div>
-								</div>
-								<div class="act">
-									<div class="text-center">
-										<div class="row">
-											<div class="col-xs-2 col-md-3"></div>
-											<div class="col-xx col-xs-8 col-md-6">
-												<input id="redirect_path" type="hidden" name="redirect" value=""/>
-												<input type="hidden" name="process_order" value="true">
-												<br><br>
-												<button class="btn btn-block btn-orange" type="button" onclick="return submit_payment_method();">CONFIRM ORDER</button>
-											</div>
-											<div class="col-xs-2 col-md-3"></div>
-										</div>
-									</div>
-								</div>
 								</form>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-2"></div>
 			</div>
 		</div>
-	</div>
-</div>
-<!-- ./Container -->
+			<script>
+			$(document).ready(function(){
+				$('[data-toggle="tooltip"]').tooltip(); 
+			});
+			</script>
 
 <?php endif; ?>
 

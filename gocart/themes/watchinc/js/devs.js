@@ -1,7 +1,10 @@
 /* Devs Scripts */
 
 (function() {
-
+	$.post("http://watchinc.co.id/cart/get_shopping_cart", function(data){
+		$('#shopping_cart').html(data);
+	});
+	
     /* Carousel For Banner */
     var owlBannerId = document.getElementById('owl-banner'),
         owlBanner = $(owlBannerId);

@@ -89,7 +89,7 @@ class go_cart {
 		$this->_cart_contents['shipping_total'] 			= 0;
 		// tax
 		$this->_cart_contents['tax'] 						= 0;
-		$this->_cart_contents['ahipping'] 					= "JNE REG";
+		//$this->_cart_contents['shipping'] 					= "";
 						
 		
 		
@@ -709,11 +709,11 @@ class go_cart {
 					$this->_cart_contents['requires_shipping'] 		= true;
 				}
 				
-				// charge tax?
-				//if($val['taxable'] == 1)
-				//{
-				//	$taxable 		+= ($this_price * $val['quantity']);
-				//}
+				// charge tax? 0 means tax added
+				if($val['taxable'] == 0)
+				{
+					$taxable 		+= ($this_price * $val['quantity']);
+				}
 				
 				$total 			+= ($this_price * $val['quantity']);
 				
@@ -732,8 +732,8 @@ class go_cart {
 			
 			// set taxable subtotal
 			//$this->_cart_contents['taxable_total'] = $taxable - $this->_cart_contents['taxable_coupon_discount'];
-			
-			$this->_cart_contents['cart_total'] = $total - $this->_cart_contents['coupon_discount']; // $this->_cart_contents['group_discount'];
+			$this->_cart_contents['taxable_total'] = (($taxable * 0.2)/100) + 5000;
+			$this->_cart_contents['cart_total'] = $total - $this->_cart_contents['coupon_discount'] - $this->_cart_contents['group_discount'] + $this->_cart_contents['taxable_total']; // $this->_cart_contents['group_discount'];
 			
 			
 			// add any additional custom charges
@@ -1044,7 +1044,6 @@ class go_cart {
 	// set shipping method
 	function set_shipping_method($method)
 	{
-		
 		$this->_cart_contents['shipping']=$method;
 		
 		//update cart - recalculate
@@ -1066,7 +1065,7 @@ class go_cart {
 	//remove shipping details
 	function clear_shipping()
 	{
-		$this->_cart_contents['shipping']['method']	= "No Shipping";  // defaults
+		//$this->_cart_contents['shipping']['method']	= "No Shipping";  // defaults
 		$this->_cart_contents['shipping2']['prices']	= 0.00;
 		
 		$this->_save_cart();
