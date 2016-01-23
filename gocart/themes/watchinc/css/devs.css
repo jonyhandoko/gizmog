@@ -517,6 +517,7 @@ a:focus {
 }
 
 .def-temp .head {
+	margin-top: 40px;
 	margin-bottom: 10px;
 }
 .def-temp .head .title {
@@ -667,8 +668,8 @@ a:focus {
 }
 
 .def-temp .head .breadcrumb {
-	padding-right: 0;
-	padding-left: 0;
+	margin-bottom: 0;
+	padding: 8px 0;
 	background-color: transparent;
 }
 .def-temp .head .breadcrumb a {
@@ -676,18 +677,12 @@ a:focus {
 }
 .def-temp .head .breadcrumb > .active {
 	color: #FFEC0F;
-		background: #000;
-		padding: 0 5px;
+	background: #000;
+	padding: 4px 8px;
 }
 .def-temp .head .breadcrumb > li + li:before {
 	color: #FFEC0F;
 	content: ">\00a0";
-}
-
-@media (min-width: 768px) {
-	.def-temp .head .breadcrumb {
-		margin-top: -36px;
-	}
 }
 
 .carousel-thumbnail {
@@ -726,6 +721,7 @@ a:focus {
 	opacity: 1;
 }
 .carousel-thumbnail-nav .selected img {
+	padding: 4px;
 }
 .carousel-thumbnail-nav .carousel-control {
 	position: relative;
@@ -781,6 +777,7 @@ a:focus {
 	padding: 20px 0;
 	border-top: 1px solid #ECECEC;
 	border-bottom: 1px solid #ECECEC;
+	overflow: auto;
 }
 .product .describe .description [class^="col"] {
 	padding: 8px 15px;
@@ -794,12 +791,12 @@ a:focus {
 	font-style: italic;
 }
 .product .describe .description .status-instock {
-	padding: 8px;
-	background-color: #F00;
+	padding: 4px 8px;
+	background-color: #FF5722;
 	color: #FFF;
 	display: inline-block;
-		font-weight: bold;
-		margin-top: 10px;
+	font-weight: bold;
+	margin-top: 10px;
 }
 .product .describe .description .price {
 	color: #FFEC0F;
@@ -824,11 +821,14 @@ a:focus {
 .product .describe .description .form-inline .btn {
 	padding: 6px 24px;
 }
-.product .describe .description .actions {
-/*
-	padding: 20px;
-	background-color: #CCC;
-*/
+.product .describe .description .infos {
+	background-color: #FFEC0F;
+	margin-right: -15px;
+	margin-left: -15px;
+	padding: 10px 15px;
+}
+.product .describe .share {
+	text-align: center;
 }
 .product .describe .share .breadcrumb {
 	padding: 15px 0;
@@ -947,7 +947,7 @@ a:focus {
 	padding: 0;
 	border: 0;
 	background-color: transparent;
-	color: #000;
+	color: #A5A5A5;
 	font-size: 18px;
 }
 .def-temp .head .as-title > li.active > a,
@@ -956,7 +956,7 @@ a:focus {
 	border: 0;
 }
 .def-temp .head .as-title > li.active > a {
-	color: #F00;
+	color: #000;
 }
 .def-temp .content .as-title-content {
 /*	margin-left: 60px;*/
