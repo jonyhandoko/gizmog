@@ -5,40 +5,37 @@
 			<div class="banners">
 				<div class="container-fluid">
 					<div class="banner-big">
-						
-                        <div class="owl-banner">
-                            <div id="owl-banner" class="owl-carousel">
-                                <div class="item">
-                                    <img src="images/watchinc/banner/big-1.jpg" class="img-responsive">
-                                </div>
-                                <div class="item">
-                                    <img src="images/watchinc/banner/big-1.jpg" class="img-responsive">
-                                </div>
-                                <div class="item">
-                                    <img src="images/watchinc/banner/big-1.jpg" class="img-responsive">
-                                </div>
-                                <div class="item">
-                                    <img src="images/watchinc/banner/big-1.jpg" class="img-responsive">
-                                </div>
-                            </div>
-                        </div>
+						<div class="owl-banner">
+							<div id="owl-banner" class="owl-carousel">
+								<div class="item">
+									<img src="images/watchinc/banner/big-1.jpg" class="img-responsive">
+								</div>
+								<div class="item">
+									<img src="images/watchinc/banner/big-1.jpg" class="img-responsive">
+								</div>
+								<div class="item">
+									<img src="images/watchinc/banner/big-1.jpg" class="img-responsive">
+								</div>
+								<div class="item">
+									<img src="images/watchinc/banner/big-1.jpg" class="img-responsive">
+								</div>
+							</div>
+						</div>
 					</div>
-					
 				</div>
-                
-                <div class="container banner-small">
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <img src="images/watchinc/banner/small-1.jpg" class="img-responsive">
-                        </div>
-                        <div class="col-sm-4">
-                            <img src="images/watchinc/banner/small-2.jpg" class="img-responsive">
-                        </div>
-                        <div class="col-sm-4">
-                            <img src="images/watchinc/banner/small-3.jpg" class="img-responsive">
-                        </div>
-                    </div>
-                </div>
+				<div class="container banner-small">
+					<div class="row">
+						<div class="col-sm-4">
+							<img src="images/watchinc/banner/small-1.jpg" class="img-responsive">
+						</div>
+						<div class="col-sm-4">
+							<img src="images/watchinc/banner/small-2.jpg" class="img-responsive">
+						</div>
+						<div class="col-sm-4">
+							<img src="images/watchinc/banner/small-3.jpg" class="img-responsive">
+						</div>
+					</div>
+				</div>
 			</div>
 			<div class="featured">
 				<div class="container">
@@ -51,7 +48,7 @@
 							</div>
 						</div>
 						<div class="thumbs owl-featured">
-							<div id="owl-featured" class="row owl-carousel">
+							<div id="owl-featured" class="owl-carousel">
 								<?php if(count($products) > 0):?>
 									<?php for($j=0;$j<1;$j++){?>
 									<?php
@@ -74,19 +71,18 @@
 										}
 									?>
 									<a href="<?php echo base_url($product->slug);?>" class="thumb">
-										<div class="desc">
-											<p class="brand-name"><?php echo strtoupper($product->brand['brand_name']);?></p>
-											<p class="name"><?php echo $product->name;?></p>
+										<div class="item">
+											<div class="desc">
+												<p class="brand-name"><?php echo strtoupper($product->brand['brand_name']);?></p>
+												<p class="name"><?php echo $product->name;?></p>
+											</div>
+											<div class="image">
+												<?php echo $photo; ?>
+											</div>
+											<div class="desc">
+												<p class="price-tag"><?php echo format_currency($product->price); ?></p>
+											</div>
 										</div>
-                                        
-                                        <div class="image">
-											<?php echo $photo; ?>
-										</div>
-                                        
-                                        <div class="desc">
-											<p class="price-tag"><?php echo format_currency($product->price); ?></p>
-										</div>
-										
 									</a>
 									<?php endforeach; ?>
 									<?php };?>
@@ -102,7 +98,7 @@
 						<div class="head">
 							<div class="row">
 								<div class="col-xs-12">
-<!--									<img src="images/watchinc/watch.png" class="img-responsive pull-left">-->
+									<!-- <img src="images/watchinc/watch.png" class="img-responsive pull-left"> -->
 									<h3 class="title">MEN WATCHES</h3>
 								</div>
 							</div>
@@ -129,18 +125,19 @@
 											$photo	= '<img class="img-responsive" src="'.base_url('uploads/product/thumb/'.$primary->filename).'" alt="'.$product->seo_title.'"/>';
 										}
 									?>
-									<div class="col-sm-15 col-xs-6 col-xx fix-category-content">
+									<div class="col-sm-3">
 										<a href="<?php echo base_url($menwatch->slug);?>" class="thumb">
-											<div class="desc">
-												<p class="brand-name"><?php echo strtoupper($menwatch->brand['brand_name']);?></p>
-												<p class="name"><?php echo $menwatch->name;?></p>
-											</div>
-                                            
-                                            <div class="image">
-												<?php echo $photo; ?>
-											</div>
-											<div class="desc">
-												<p class="price-tag"><?php echo format_currency($menwatch->price); ?></p>
+											<div class="item">
+												<div class="desc">
+													<p class="brand-name"><?php echo strtoupper($menwatch->brand['brand_name']);?></p>
+													<p class="name"><?php echo $menwatch->name;?></p>
+												</div>
+												<div class="image">
+													<?php echo $photo; ?>
+												</div>
+												<div class="desc">
+													<p class="price-tag"><?php echo format_currency($menwatch->price); ?></p>
+												</div>
 											</div>
 										</a>
 									</div>
@@ -160,7 +157,7 @@
 						<div class="head">
 							<div class="row">
 								<div class="col-xs-12">
-<!--									<img src="images/watchinc/watch.png" class="img-responsive pull-left">-->
+									<!-- <img src="images/watchinc/watch.png" class="img-responsive pull-left"> -->
 									<h3 class="title">LATEST NEWS</h3>
 								</div>
 							</div>
@@ -177,12 +174,14 @@
 											$link = str_replace(" ", "-", $title)."--".$blog->ID;
 										?>
 										<a href="<?php echo base_url('/blog/'.$link);?>" class="thumb">
-											<div class="image">
-												<img src="<?php echo $blog->thumbsmall;?>" class="img-responsive">
-											</div>
-											<div class="desc">
-												<p class="name"><?php echo $blog->title;?></p>
-												<p class="detail"><?php echo $blog->excerpt;?></p>
+											<div class="item">
+												<div class="image">
+													<img src="<?php echo $blog->thumbsmall;?>" class="img-responsive">
+												</div>
+												<div class="desc">
+													<p class="brand-name"><?php echo $blog->title;?></p>
+													<p><?php echo $blog->excerpt;?></p>
+												</div>
 											</div>
 										</a>
 									</div>
