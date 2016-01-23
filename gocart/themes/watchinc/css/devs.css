@@ -575,6 +575,7 @@ a:focus {
 }
 .owl-banner .item img {
 	margin-bottom: 0;
+	width: 100%;
 }
 .owl-banner .owl-theme .owl-controls {
 	margin-top: 0;
