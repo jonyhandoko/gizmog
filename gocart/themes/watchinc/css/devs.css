@@ -275,11 +275,12 @@ a:focus {
 	color: #000;
 	font-weight: 600;
 }
-.def-footer .form-control::-webkit-input-placeholder {
+.def-footer .form-control::-webkit-placeholder {
 	color: #333;
 }
-.def-footer .form-control::-moz-input-placeholder {
+.def-footer .form-control::-moz-placeholder {
 	color: #333;
+	opacity: 1
 }
 .def-footer .footer-form .btn {
 	border-color: #000;
@@ -361,10 +362,10 @@ a:focus {
 		border-color: #000;
 		font-weight: 600;
 	}
-	.def-header .form-control::-webkit-input-placeholder {
+	.def-header .form-control::-webkit-placeholder {
 		color: #333;
 	}
-	.def-header .form-control::-moz-input-placeholder {
+	.def-header .form-control::-moz-placeholder {
 		color: #333;
 	}
 	.def-header .navbar-default .navbar-collapse:last-child {
