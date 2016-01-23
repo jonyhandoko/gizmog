@@ -41,7 +41,7 @@
 								<p>SIGN UP FOR UPDATES AND SPECIAL OFFERS</p>
 								<form class="form-inline footer-form">
 									<div class="form-group">
-										<input type="email" class="form-control" placeholder="Email">
+										<input type="email" class="form-control" placeholder="EMAIL">
 									</div>
 									<button type="submit" class="btn btn-orange">SIGN UP</button>
 								</form>

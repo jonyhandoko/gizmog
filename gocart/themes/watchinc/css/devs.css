@@ -275,7 +275,7 @@ a:focus {
 	color: #000;
 	font-weight: 600;
 }
-.def-footer .form-control::-webkit-placeholder {
+.def-footer .form-control::-webkit-input-placeholder {
 	color: #333;
 }
 .def-footer .form-control::-moz-placeholder {
@@ -362,7 +362,7 @@ a:focus {
 		border-color: #000;
 		font-weight: 600;
 	}
-	.def-header .form-control::-webkit-placeholder {
+	.def-header .form-control::-webkit-input-placeholder {
 		color: #333;
 	}
 	.def-header .form-control::-moz-placeholder {
