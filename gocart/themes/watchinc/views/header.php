@@ -54,12 +54,21 @@
 									</button>
 								</form>
 							</li>
-							<li class="auth">
-								<a href="<?php echo base_url('/secure/login');?>" class="btn-auth">LOGIN</a>
-							</li>
-							<li class="auth">
-								<a href="<?php echo base_url('/secure/login');?>" class="btn-auth">REGISTER</a>
-							</li>
+							<?php if($this->Customer_model->is_logged_in(false, false)):?>
+								<li class="auth">
+									<a href="<?php echo base_url('/secure/my_account');?>" class="btn-auth">Welcome, <?php echo strtoupper($this->customer['firstname']);?>!</a>
+								</li>
+								<li class="auth">
+									<a href="<?php echo base_url('/secure/logout');?>" class="btn-auth">SIGN OUT</a>
+								</li>
+								<?php else:?>
+								<li class="auth">
+									<a href="<?php echo base_url('/secure/login');?>" class="btn-auth">LOGIN</a>
+								</li>
+								<li class="auth">
+									<a href="<?php echo base_url('/secure/login');?>" class="btn-auth">REGISTER</a>
+								</li>
+							<?php endif;?>
 							<li class="dropdown">
 								<a href="" class="dropdown-toggle cart-anchor" data-toggle="dropdown" role="button" aria-expanded="false">
 									<div class="bag-count">
@@ -167,17 +176,6 @@
 							<li><a href="<?php echo base_url('/sale');?>">SALE</a></li>
 							<li><a href="<?php echo base_url('/blog');?>">ARTICLE</a></li>
 							<li><a href="<?php echo base_url('/cart/confirmation_payment');?>">CONFIRM PAYMENT</a></li>
-						</ul>
-						<ul class="nav navbar-nav navbar-right text-center">
-							<?php if($this->Customer_model->is_logged_in(false, false)):?>
-								<li>
-									<a href="<?php echo base_url('/secure/my_account');?>">Welcome, <?php echo strtoupper($this->customer['firstname']);?>!</a>
-								</li>
-								<li>
-									<a href="<?php echo base_url('/secure/logout');?>" class="active">Sign out</a>
-								</li>
-								<?php else:?>
-							<?php endif;?>
 						</ul>
 					</div>
 				</nav>
