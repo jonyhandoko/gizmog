@@ -36,7 +36,7 @@
 								<?php if ($this->go_cart->total_items()==0):?>
 									<div class="message">There are no products in your cart!</div>
 								<?php else: ?>
-									<div class="panel panel-as-table">
+									<div class="panel">
 										<div class="panel-heading">
 											<div class="row">
 												<div class="col-sm-6">

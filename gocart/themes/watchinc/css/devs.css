@@ -1383,6 +1383,77 @@ a:focus {
 	background-color: transparent;
 }
 
+.cart .view-cart .panel {
+	margin-bottom: 30px;
+	border: 1px solid #CCC;
+	border-top: 4px solid #666;
+	border-radius: 0;
+}
+.cart .view-cart .panel > .panel-heading {
+	padding: 15px 20px;
+	border-bottom: 1px solid #CCC;
+}
+.cart .view-cart .panel > .panel-heading p {
+	margin-bottom: 0;
+}
+.cart .view-cart .panel > .panel-body {
+	padding: 0;
+}
+.cart .view-cart .panel > .panel-body > .row {
+	margin-right: 0;
+	margin-left: 0;
+	padding: 20px 10px;
+	border-bottom: 1px solid #ccc;
+}
+.cart .view-cart .panel > .panel-body > .row:last-child {
+	border-bottom: 0;
+}
+.cart .view-cart .panel > .panel-footer .btn {
+  padding: 6px 30px;
+}
+.cart .view-cart .media .media-object {
+	max-height: 100px;
+	width: auto;
+}
+.cart .view-cart .coupon .panel,
+.cart .view-cart .total .panel {
+	margin-bottom: 60px;
+	padding: 20px 30px 30px;
+	border: 1px solid #CCC;
+	border-radius: 0;
+}
+.cart .view-cart .coupon .title,
+.cart .view-cart .total .title {
+	margin-top: 0;
+	margin-bottom: 20px;
+}
+.cart .view-cart .total .btn {
+	border-radius: 0px; padding:6px 30px;
+}
+.cart .empty-cart p {
+	margin-bottom: 20px;
+	font-size: 16px;
+	font-weight: 300;
+}
+.cart .empty-cart .btn {
+	min-width: 180px;
+	font-size: 20px;
+	font-weight: 300;
+}
+.cart .empty-cart img {
+	margin-bottom: 40px;
+}
+.cart .delete,
+.cart .delete:hover {
+	color: #ff0000
+}
+
+.yamm-fw .dropdown-menu > li {
+	margin-top: 15px;
+	margin-bottom: 15px;
+	overflow: auto;
+}
+
 /* Other */
 body {
 	min-width: 1170px;
@@ -1612,81 +1683,4 @@ body {
 	background: transparent;
 }
 */
-.cart .view-cart .panel {
-	margin-bottom: 30px;
-	border: 1px solid #CCC;
-	border-top: 4px solid #666;
-	border-radius: 0;
-}
-.cart .view-cart .panel > .panel-heading {
-	padding: 15px 20px;
-	border-bottom: 1px solid #CCC;
-}
-.cart .view-cart .panel > .panel-heading p {
-	margin-bottom: 0;
-}
-.cart .view-cart .panel > .panel-body {
-	padding: 0;
-}
-.cart .view-cart .panel > .panel-body > .row {
-	margin-right: 0;
-	margin-left: 0;
-	padding: 20px 10px;
-	border-bottom: 1px solid #ccc;
-}
-.cart .view-cart .panel > .panel-body > .row:last-child {
-	border-bottom: 0;
-}
-.cart .view-cart .panel > .panel-footer .btn {
-  padding: 6px 30px;
-}
-.cart .view-cart .media .media-object {
-	max-height: 100px;
-	width: auto;
-}
-.cart .view-cart .coupon .panel,
-.cart .view-cart .total .panel {
-	margin-bottom: 60px;
-	padding: 20px 30px 30px;
-	border: 1px solid #CCC;
-	border-radius: 0;
-}
-.cart .view-cart .coupon .title,
-.cart .view-cart .total .title {
-	margin-top: 0;
-	margin-bottom: 20px;
-}
-.cart .view-cart .total .btn {
-	border-radius: 0px; padding:6px 30px;
-}
-.cart .empty-cart p {
-	margin-bottom: 20px;
-	font-size: 16px;
-	font-weight: 300;
-}
-.cart .empty-cart .btn {
-	min-width: 180px;
-	font-size: 20px;
-	font-weight: 300;
-}
-.cart .empty-cart img {
-	margin-bottom: 40px;
-}
-.cart .delete,
-.cart .delete:hover {
-	color: #ff0000
-}
-
-.yamm-fw .dropdown-menu > li {
-	margin-top: 15px;
-	margin-bottom: 15px;
-	overflow: auto;
-}
-
-.panel-as-table {
-	margin-bottom: 0;
-	border: 1px solid #CCC;
-	border-top: 2px solid #000;
-	border-radius: 0;
-}
 
