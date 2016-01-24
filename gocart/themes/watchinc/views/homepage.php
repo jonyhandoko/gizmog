@@ -23,22 +23,24 @@
 						</div>
 					</div>
 				</div>
-				<div class="container banner-small">
-					<div class="row">
-						<div class="col-sm-4">
-							<img src="images/watchinc/banner/small-1.jpg" class="img-responsive">
-						</div>
-						<div class="col-sm-4">
-							<img src="images/watchinc/banner/small-2.jpg" class="img-responsive">
-						</div>
-						<div class="col-sm-4">
-							<img src="images/watchinc/banner/small-3.jpg" class="img-responsive">
+				<div class="container-fluid">
+					<div class="banner-small">
+						<div class="row">
+							<div class="col-sm-4">
+								<img src="images/watchinc/banner/small-1.jpg" class="img-responsive">
+							</div>
+							<div class="col-sm-4">
+								<img src="images/watchinc/banner/small-2.jpg" class="img-responsive">
+							</div>
+							<div class="col-sm-4">
+								<img src="images/watchinc/banner/small-3.jpg" class="img-responsive">
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="featured">
-				<div class="container">
+				<div class="container-fluid">
 					<div class="def-temp">
 						<div class="head">
 							<div class="row">
@@ -93,7 +95,7 @@
 				</div>
 			</div>
 			<div class="featured-tabs">
-				<div class="container">
+				<div class="container-fluid">
 					<div class="def-temp">
 						<div class="head">
 							<div class="row">
@@ -152,7 +154,7 @@
 				<img src="images/watchinc/banner/fluid.jpg" class="img-responsive">
 			</div>
 			<div class="news">
-				<div class="container">
+				<div class="container-fluid">
 					<div class="def-temp">
 						<div class="head">
 							<div class="row">

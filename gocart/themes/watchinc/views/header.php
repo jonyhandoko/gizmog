@@ -29,7 +29,7 @@
 	<body>
 
 		<div class="def-header">
-			<div class="container">
+			<div class="container-fluid">
 				<nav class="navbar navbar-default navbar-static-top">
 					<div class="navbar-header">
 						<button class="navbar-toggle navbar-toggle-left collapsed" data-toggle="collapse" data-target="#category" aria-expanded="false" aria-controls="category">
@@ -182,7 +182,7 @@
 			</div>
 			<div class="search-block closed">
 				<a class="search-close">CLOSE</a>
-				<div class="container">
+				<div class="container-fluid">
 					<div class="row">
 						<div class="col-sm-3"></div>
 						<div class="col-sm-6">

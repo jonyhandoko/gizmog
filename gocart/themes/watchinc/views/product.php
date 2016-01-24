@@ -3,7 +3,7 @@
 ?>
 
 			<div class="product">
-				<div class="container">
+				<div class="container-fluid">
 					<div class="def-temp">
 						<div class="head">
 							<div class="row">

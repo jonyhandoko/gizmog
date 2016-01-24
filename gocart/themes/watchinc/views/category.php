@@ -3,7 +3,7 @@
 ?>
 
 			<div class="category">
-				<div class="container">
+				<div class="container-fluid">
 					<div class="col-sm-3">
 						<div class="filter">
 							<div class="head-filter">
@@ -108,7 +108,7 @@
 								<?php endif;?>
 							</div>
 							<div class="filter-product"></div>
-							<div class="filter-container">
+							<div class="filter-container-fluid">
 								<?php
 								$current_url = explode("?", $_SERVER['REQUEST_URI']);
 								?>

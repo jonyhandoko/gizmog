@@ -3,7 +3,7 @@
 ?>
 
 			<div class="checkout">
-				<div class="container">
+				<div class="container-fluid">
 					<div class="def-temp">
 						<div class="arrow-steps">
 							<div class="row">

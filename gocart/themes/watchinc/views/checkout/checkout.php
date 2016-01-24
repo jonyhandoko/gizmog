@@ -2,7 +2,7 @@
 	include(APPPATH.'themes/'.$this->config->item('theme').'/views/header.php');
 ?>
 <div class="product checkout">
-		<div class="container" style="padding-top: 25px">
+		<div class="container-fluid" style="padding-top: 25px">
 			<div class="def-temp">
 				<div class="arrow-steps">
 					<div class="row">
@@ -43,7 +43,7 @@
 												<img alt="loading" src="<?php echo base_url('images/ajax-loader.gif');?>"/>
 											</div>
 										</div>
-										<div id="submit_button_container">
+										<div id="submit_button_container-fluid">
 											<input type="hidden" name="process_order" value="true">
 										</div>
 									</div>
@@ -74,7 +74,7 @@
 										<form>
 											<input type="radio" <?php if($this->go_cart->shipping_method()=="JNE REG") echo "checked";?> name="shipping_method" value="reg"/> <label><img src="<?php echo base_url('/images/watchinc/method/jne-reg.png');?>" class="radio-img"> JNE REG - <span class="jne_reg"><?php echo $jne->reg;?></span></label>
 											<?php if($jne->yes==0):?>
-											
+
 											<?php else:?>
 											<br/>
 											<input type="radio" <?php if($this->go_cart->shipping_method()=="JNE YES") echo "checked";?> name="shipping_method" value="yes" /> <label><img src="<?php echo base_url('/images/watchinc/method/jne-yes.png');?>" class="radio-img"> JNE YES - <span class="jne_yes"><?php echo $jne->yes;?></span></label>
@@ -155,7 +155,7 @@
 					<input type="hidden" id="php-message-error-save-payment" value="<?php echo lang('error_save_payment');?>">
 				</div>
 			</div>
-		</div>	
+		</div>
 </div>
 
 <?php

@@ -3,7 +3,7 @@
 		<div class="def-footer">
 			<footer class="footer">
 				<div class="sitemap">
-					<div class="container">
+					<div class="container-fluid">
 						<div class="row">
 							<div class="col-sm-2">
 								<img src="<?php echo base_url('images/watchinc/brand-small.png');?>" class="img-responsive brand">
@@ -50,7 +50,7 @@
 					</div>
 				</div>
 				<div class="rights">
-					<div class="container">
+					<div class="container-fluid">
 						<div class="row">
 							<div class="col-sm-6">
 								<p>Copyright 2015 Watch Inc. All Rights Reserved.</p>
