@@ -29,13 +29,28 @@
 				</div>
 			</div>
 			<div class="content">
-				<div class="view-cart">
-					<?php echo form_open('cart/update_cart', array('id'=>'update_cart_form'));?>
-						<div class="row">
-							<div class="col-xs-12">
-								<?php if ($this->go_cart->total_items()==0):?>
-									<div class="message">There are no products in your cart!</div>
-								<?php else: ?>
+				<?php echo form_open('cart/update_cart', array('id'=>'update_cart_form'));?>
+					<?php if ($this->go_cart->total_items()==0):?>
+						<div class="empty-cart">
+							<div class="row">
+								<div class="col-xs-1"></div>
+									<div class="col-xs-6">
+									<div class="empty">
+										<h2>Your Shopping Bag is Empty</h2>
+										<p>If items in your shopping bag are missing, try signing in to your account to view them.</p>
+										<a href="../" type="button" class="btn btn-orange">GO SHOPPING</a>
+									</div>
+								</div>
+								<div class="col-xs-4">
+									<img class="img-responsive center-block" src="<?php echo base_url('/images/watchinc/cart-empty.png');?>">
+								</div>
+								<div class="col-xs-1"></div>
+							</div>
+						</div>
+					<?php else: ?>
+						<div class="view-cart">
+							<div class="row">
+								<div class="col-xs-12">
 									<div class="panel">
 										<div class="panel-heading">
 											<div class="row">
@@ -106,65 +121,65 @@
 										</div>
 									</div>
 								</div>
-							<?php endif;?>
-						</div>
-						<div class="row">
-							<div class="col-sm-6">
-								<div class="coupon">
-									<div class="panel panel-as-table">
-										<h3 class="title"><span class="orange">HAVE</span> A COUPON?</h3>
-										<!-- <input type="text" class="input2" name="coupon_code">
-										<input type="submit" class="button2" value="apply"> -->
-										<div class="form-inline">
-											<div class="form-group">
-												<label for="coupon-code" class="sr-only">Coupon Code</label>
-												<input type="text" class="form-control" id="coupon-code" name="coupon_code" placeholder="Coupon Code">
-											</div>
-											<button type="submit" class="btn btn-orange">APPLY</button>
-										</div>
-									</div>
-								</div>
 							</div>
-							<div class="col-sm-6">
-								<div class="total">
-									<div class="panel panel-as-table">
-										<h3 class="title"><span class="orange">CART</span> TOTAL</h3>
-										<div class="row">
-											<div class="col-sm-6">
-												<span>CART SUBTOTAL</span>
-											</div>
-											<div class="col-sm-6 text-right">
-												<?php echo format_currency($this->go_cart->subtotal());?>
-											</div>
-											<div class="col-sm-6">
-												<span>SHIPPING</span>
-											</div>
-											<div class="col-sm-6 text-right">
-												<?php echo format_currency($this->go_cart->shipping_cost());?>
-											</div>
-											<div class="col-sm-6">
-												<span>VOUCHER</span>
-											</div>
-											<div class="col-sm-6 text-right">
-												<?php echo format_currency(0-$this->go_cart->coupon_discount());   ?>
-											</div>
-											<div class="col-sm-6">
-												<span>ORDER TOTAL</span>
-											</div>
-											<div class="col-sm-6 text-right">
-												<?php echo format_currency($this->go_cart->total());?>
-											</div>
-											<div class="col-sm-12">
-												<input id="redirect_path" type="hidden" name="redirect" value=""/>
-												<br/><button class="btn btn-black pull-right" onClick="$('#redirect_path').val('checkout');">PROCEED TO CHECKOUT</button>
+							<div class="row">
+								<div class="col-sm-6">
+									<div class="coupon">
+										<div class="panel panel-as-table">
+											<h3 class="title"><span class="orange">HAVE</span> A COUPON?</h3>
+											<!-- <input type="text" class="input2" name="coupon_code">
+											<input type="submit" class="button2" value="apply"> -->
+											<div class="form-inline">
+												<div class="form-group">
+													<label for="coupon-code" class="sr-only">Coupon Code</label>
+													<input type="text" class="form-control" id="coupon-code" name="coupon_code" placeholder="Coupon Code">
+												</div>
+												<button type="submit" class="btn btn-orange">APPLY</button>
 											</div>
 										</div>
 									</div>
 								</div>
+								<div class="col-sm-6">
+									<div class="total">
+										<div class="panel panel-as-table">
+											<h3 class="title"><span class="orange">CART</span> TOTAL</h3>
+											<div class="row">
+												<div class="col-sm-6">
+													<span>CART SUBTOTAL</span>
+												</div>
+												<div class="col-sm-6 text-right">
+													<?php echo format_currency($this->go_cart->subtotal());?>
+												</div>
+												<div class="col-sm-6">
+													<span>SHIPPING</span>
+												</div>
+												<div class="col-sm-6 text-right">
+													<?php echo format_currency($this->go_cart->shipping_cost());?>
+												</div>
+												<div class="col-sm-6">
+													<span>VOUCHER</span>
+												</div>
+												<div class="col-sm-6 text-right">
+													<?php echo format_currency(0-$this->go_cart->coupon_discount());   ?>
+												</div>
+												<div class="col-sm-6">
+													<span>ORDER TOTAL</span>
+												</div>
+												<div class="col-sm-6 text-right">
+													<?php echo format_currency($this->go_cart->total());?>
+												</div>
+												<div class="col-sm-12">
+													<input id="redirect_path" type="hidden" name="redirect" value=""/>
+													<br/><button class="btn btn-black pull-right" onClick="$('#redirect_path').val('checkout');">PROCEED TO CHECKOUT</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
-					</form>
-				</div>
+					<?php endif;?>
+				</form>
 			</div>
 		</div>
 	</div>

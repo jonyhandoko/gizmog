@@ -437,6 +437,7 @@ a:focus {
 	}
 }
 
+.def-content .banner,
 .def-content .banners {
 	margin-bottom: 25px;
 }
@@ -1250,8 +1251,10 @@ a:focus {
 .cart .delete:hover {
 	color: #ff0000
 }
-
-.yamm-fw .dropdown-menu > li {
+.yamm .yamm-fw .dropdown-menu {
+	top: 98px;
+}
+.yamm .yamm-fw .dropdown-menu > li {
 	margin-top: 15px;
 	margin-bottom: 15px;
 	overflow: auto;
@@ -1453,12 +1456,13 @@ body {
 }
 
 .message_product {
-	background-color: green;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	padding: 5px 10px;
+	background-color: #00B286;
 	font-size: 14px;
 	color: white;
 	font-weight: bold;
-	padding: 5px 0;
-	margin: 10px 25px;
 }
 .message_product a {
 	color: #f1a744;
