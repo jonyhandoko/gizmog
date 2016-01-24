@@ -69,7 +69,7 @@
 															<div class="media-body">
 																<p><?php echo $product['name']; ?></p>
 																<!--<p><i>Perspiciatis unde omnis iste natus errorsit voluptatem</i></p>-->
-																<a href="<?php echo site_url('cart/remove_item/'.$cartkey);?>" class="red-text">DELETE</a>
+																<a href="<?php echo site_url('cart/remove_item/'.$cartkey);?>" class="delete">DELETE</a>
 															</div>
 														</div>
 													</div>

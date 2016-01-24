@@ -1672,6 +1672,10 @@ body {
 .cart .empty-cart img {
 	margin-bottom: 40px;
 }
+.cart .delete,
+.cart .delete:hover {
+	color: #ff0000
+}
 
 .yamm-fw .dropdown-menu > li {
 	margin-top: 15px;
