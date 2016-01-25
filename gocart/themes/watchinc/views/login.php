@@ -2,7 +2,7 @@
 	include('header.php');
 ?>
 
-			<div class="container" style="padding-top: 25px;">
+			<div class="container-fluid" style="padding-top: 25px;">
 				<div class="row">
 					<div class="col-sm-4">
 						<div class="form-login">

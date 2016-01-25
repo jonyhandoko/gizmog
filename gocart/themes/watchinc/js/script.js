@@ -153,19 +153,19 @@
 
 // Category
 	var productContent = document.getElementById('product-content'), timer, isLoading;
-	
-	$(window).scroll(function() {
+
+	/* $(window).scroll(function() {
 		if (timer) {
 			window.clearTimeout(timer);
 		}
-		
+
 			if (($(window).scrollTop() > $(productContent).height() - $(productContent).offset().top - 20) && !isLoading) {
-				
-				isLoadingData = true; 
+
+				isLoadingData = true;
 				var next_url = $('.next-pagination').attr('href');
 				$('.load-font').hide();
 				$('.load-gif').show();
-				
+
 				timer = window.setTimeout(function() {
 					if (next_url) {
 						$.ajax({
@@ -185,8 +185,8 @@
 					}
 				}, 1500);
 			}
-		
-	});
+
+	}); */
 
 	$('.more').on('click',function() {
 		var next_url = $('.next-pagination').attr('href');
@@ -211,7 +211,7 @@
 			$('.more').remove();
 		}
 	});
-	
+
 	$('img.lazy').lazyload({effect: 'fadeIn'});
 
 

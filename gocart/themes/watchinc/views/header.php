@@ -8,12 +8,11 @@
 		<meta name="keywords" content="">
 		<meta name="author" content="">
 
-		<title>Watch Inc <?php if (isset($page_title)) echo ' - '.$page_title;?></title>
+		<title>GIZMOG <?php if (isset($page_title)) echo ' - '.$page_title;?></title>
 
 		<link href="<?php echo base_url('gocart/themes/'.$this->config->item('theme').'/css/init.css');?>" rel="stylesheet">
 		<link href="<?php echo base_url('gocart/themes/'.$this->config->item('theme').'/css/plug.css');?>" rel="stylesheet">
 		<link href="<?php echo base_url('gocart/themes/'.$this->config->item('theme').'/css/devs.css');?>" rel="stylesheet">
-		<link href="<?php echo base_url('gocart/themes/'.$this->config->item('theme').'/css/style.css');?>" rel="stylesheet">
 
 		<link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
 		<script src="<?php echo base_url('gocart/themes/'.$this->config->item('theme').'/js/modernizr.min.js');?>"></script>
@@ -30,7 +29,7 @@
 	<body>
 
 		<div class="def-header">
-			<div class="container less-padding">
+			<div class="container-fluid">
 				<nav class="navbar navbar-default navbar-static-top">
 					<div class="navbar-header">
 						<button class="navbar-toggle navbar-toggle-left collapsed" data-toggle="collapse" data-target="#category" aria-expanded="false" aria-controls="category">
@@ -42,33 +41,41 @@
 						<a class="navbar-brand" href="<?php echo base_url('/');?>">
 							<img alt="Watchinc" src="<?php echo base_url('/images/watchinc/brand.png');?>" class="img-responsive">
 						</a>
-                        
-                        <div id="product-search" style="float: left;">
-                            <input id="" type="text" class="required noMaskNeeded" placeholder="Search Products">
-                            <input id="btnSearchProducts" type="submit" value="Search">
-                        </div>
-                        
-                        <div class="account-wrapper pull-left">
-                            <a href="<?php echo base_url('/secure/login');?>">Sign in</a>
-                            <a href="#" style="margin-left: -1px;">Register</a>
-                        </div>
 					</div>
 					<div id="advance" class="navbar-collapse collapse">
 						<ul class="nav navbar-nav navbar-right navbar-right-in">
-<!--
 							<li>
-								<a id="search" class="search" style="background: transparent">
-									<img src="<?php echo base_url('/images/watchinc/icon/search.png');?>">
-								</a>
+								<form class="navbar-form navbar-right">
+									<div class="form-group">
+										<input type="text" placeholder="SEARCH" class="form-control">
+									</div>
+									<button type="submit" class="btn btn-default btn-search">
+										<img src="<?php echo base_url('/images/watchinc/icon/search.png');?>">
+									</button>
+								</form>
 							</li>
--->
+							<?php if($this->Customer_model->is_logged_in(false, false)):?>
+								<li class="auth">
+									<a href="<?php echo base_url('/secure/my_account');?>" class="btn-auth">Welcome, <?php echo strtoupper($this->customer['firstname']);?>!</a>
+								</li>
+								<li class="auth">
+									<a href="<?php echo base_url('/secure/logout');?>" class="btn-auth">SIGN OUT</a>
+								</li>
+								<?php else:?>
+								<li class="auth">
+									<a href="<?php echo base_url('/secure/login');?>" class="btn-auth">LOGIN</a>
+								</li>
+								<li class="auth">
+									<a href="<?php echo base_url('/secure/login');?>" class="btn-auth">REGISTER</a>
+								</li>
+							<?php endif;?>
 							<li class="dropdown">
-								<a href="" class="dropdown-toggle cart-anchor" data-toggle="dropdown" role="button" aria-expanded="false" style="background: transparent; ">
+								<a href="" class="dropdown-toggle cart-anchor" data-toggle="dropdown" role="button" aria-expanded="false">
 									<div class="bag-count">
 										<img src="<?php echo base_url('/images/watchinc/icon/shopping-bag.png');?>" class="def-icon">
 										<span class="badge def-badge"><?php echo $this->go_cart->total_items();?></span>
 									</div>
-									<span class="caret" style="color:#000"></span>
+									<span class="caret"></span>
 								</a>
 								<ul class="dropdown-menu def-dropdown" role="menu">
 									<?php
@@ -113,46 +120,46 @@
 								<a href=""><i class="fa fa-home"></i></a>
 							</li>
 							<li class="dropdown yamm-fw">
-								<a class="dropdown-toggle cart-anchor" data-toggle="dropdown" role="button" aria-expanded="false" href="">Watches</a>
+								<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" href="">WATCHES</a>
 								<ul class="dropdown-menu def-dropdown" role="menu">
 									<li>
-										<div class="row">
+										<div>
 											<div class="col-sm-8">
 												<div class="row">
 													<div class="col-sm-12">
-														<h3>Categories</h3>
+														<h3>CATEGORIES</h3>
 													</div>
 													<div class="col-sm-6">
 														<ul class="list-unstyled">
-															<li><h5>New in: Mens</h5></li>
-															<li><h5>Men's Watch: Classic</h5></li>
-															<li><h5>Men's Watch: Casual</h5></li>
-															<li><h5>Men's Watch: Dress</h5></li>
-															<li><h5>Men's Watch: Sport</h5></li>
+															<li><h5>NEW IN: MENS</h5></li>
+															<li><h5>MEN'S WATCH: CLASSIC</h5></li>
+															<li><h5>MEN'S WATCH: CASUAL</h5></li>
+															<li><h5>MEN'S WATCH: DRESS</h5></li>
+															<li><h5>MEN'S WATCH: SPORT</h5></li>
 														</ul>
 													</div>
 													<div class="col-sm-6">
 														<ul class="list-unstyled">
-															<li><h5>New in: Ladies</h5></li>
-															<li><h5>Ladies' Watch: Classic</h5></li>
-															<li><h5>Ladies' Watch: Casual</h5></li>
-															<li><h5>Ladies' Watch: Dress</h5></li>
-															<li><h5>Ladies' Watch: Sport</h5></li>
+															<li><h5>NEW IN: LADIES</h5></li>
+															<li><h5>LADIES' WATCH: CLASSIC</h5></li>
+															<li><h5>LADIES' WATCH: CASUAL</h5></li>
+															<li><h5>LADIES' WATCH: DRESS</h5></li>
+															<li><h5>LADIES' WATCH: SPORT</h5></li>
 														</ul>
 													</div>
 												</div>
 												<div class="row">
 													<div class="col-sm-12">
-														<h3>Brands</h3>
+														<h3>BRANDS</h3>
 													</div>
 													<div class="col-sm-6">
 														<ul class="list-unstyled">
-															<li><h5><a href="<?php echo base_url('/seiko');?>">Seiko</a></h5></li>
+															<li><h5><a href="<?php echo base_url('/seiko');?>">SEIKO</a></h5></li>
 														</ul>
 													</div>
 													<div class="col-sm-6">
 														<ul class="list-unstyled">
-															<li><h5><a href="<?php echo base_url('/seiko');?>">Alba</a></h5></li>
+															<li><h5><a href="<?php echo base_url('/seiko');?>">ALBA</a></h5></li>
 														</ul>
 													</div>
 												</div>
@@ -163,37 +170,19 @@
 										</div>
 									</li>
 								</ul>
-								<span class="arrow"></span>
 							</li>
-							<li><a href="<?php echo base_url('/strap');?>">Strap</a></li>
-							<li><a href="<?php echo base_url('/new');?>">News</a></li>
-							<li><a href="<?php echo base_url('/sale');?>">Sale</a></li>
-							<li><a href="<?php echo base_url('/blog');?>">Article</a></li>
-							<li><a href="<?php echo base_url('/cart/confirmation_payment');?>">Confirm Payment</a></li>
-						</ul>
-						<ul class="nav navbar-nav navbar-right text-center def-list">
-							<?php if($this->Customer_model->is_logged_in(false, false)):?>
-								<li>
-									<a href="<?php echo base_url('/secure/my_account');?>">Welcome, <?php echo strtoupper($this->customer['firstname']);?>!</a>
-								</li>
-								<li>
-									<a href="<?php echo base_url('/secure/logout');?>" class="active">Sign out</a>
-								</li>
-								<?php else:?>
-<!--
-								<li>
-									<a href="<?php echo base_url('/secure/login');?>">SIGN IN</a>
-								</li>
--->
-<!--								<li><a href="">REGISTER</a></li>-->
-							<?php endif;?>
+							<li><a href="<?php echo base_url('/strap');?>">STRAP</a></li>
+							<li><a href="<?php echo base_url('/new');?>">NEWS</a></li>
+							<li><a href="<?php echo base_url('/sale');?>">SALE</a></li>
+							<li><a href="<?php echo base_url('/blog');?>">ARTICLE</a></li>
+							<li><a href="<?php echo base_url('/cart/confirmation_payment');?>">CONFIRM PAYMENT</a></li>
 						</ul>
 					</div>
 				</nav>
 			</div>
 			<div class="search-block closed">
 				<a class="search-close">CLOSE</a>
-				<div class="container">
+				<div class="container-fluid">
 					<div class="row">
 						<div class="col-sm-3"></div>
 						<div class="col-sm-6">

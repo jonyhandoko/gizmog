@@ -98,7 +98,7 @@
 <?php else: ?>
 
 			<div class="product checkout">
-				<div class="container" style="padding-top: 25px">
+				<div class="container-fluid" style="padding-top: 25px">
 					<div class="def-temp">
 						<div class="arrow-steps">
 							<div class="row">
@@ -143,7 +143,7 @@
 									<h3 class="title"><span class="orange">PAYMENT</span> METHOD</h3>
 									<div class="detail">
 										<p>
-											<?php 
+											<?php
 												$paymentMethod = $this->go_cart->payment_method();
 												if($paymentMethod['description']=='Doku Payment'):
 													//echo '<img src="http://localhost:8080/watchinc/images/watchinc/method/credit-doku.png" class="bank-img"> ';
@@ -250,9 +250,9 @@
 																	<div class="col-sm-4">
 																		<p>
 																		<!--Packing Kayu <a href="#" data-toggle="tooltip" data-placement="top" title="Biaya IDR 10.500"><i class="fa fa-question" style="color: black"></i></a>
-																		
+
 																		&-->
-																		
+
 																		Asuransi <a href="#" data-toggle="tooltip" data-placement="top" title="Insurance for 0.2% of total order plus IDR 5.000"><i class="fa fa-question" style="color: black"></i></a></p>
 																	</div>
 																	<div class="col-sm-2">
@@ -311,7 +311,7 @@
 		</div>
 			<script>
 			$(document).ready(function(){
-				$('[data-toggle="tooltip"]').tooltip(); 
+				$('[data-toggle="tooltip"]').tooltip();
 			});
 			</script>
 

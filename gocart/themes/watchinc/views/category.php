@@ -3,13 +3,13 @@
 ?>
 
 			<div class="category">
-				<div class="container" style="padding-top: 25px;">
+				<div class="container-fluid">
 					<div class="col-sm-3">
 						<div class="filter">
 							<div class="head-filter">
-<!--								<img src="<?php echo base_url('images/watchinc/watch.png');?>" class="img-responsive pull-left">-->
+								<!-- <img src="<?php echo base_url('images/watchinc/watch.png');?>" class="img-responsive pull-left"> -->
 								<h4 class="title-watch">FILTER BY</h4>
-                                <div class="clearfix"></div>
+                <div class="clearfix"></div>
 							</div>
 							<div class="context-filter">
 								<div class="divider-block">
@@ -60,9 +60,9 @@
 						</div>
 						<div class="filter">
 							<div class="head-filter">
-<!--								<img src="<?php echo base_url('images/watchinc/watch.png');?>" class="img-responsive pull-left">-->
+								<!-- <img src="<?php echo base_url('images/watchinc/watch.png');?>" class="img-responsive pull-left"> -->
 								<h4 class="title-watch">PROMO WATCHES</h4>
-                                <div class="clearfix"></div>
+                <div class="clearfix"></div>
 							</div>
 							<div class="context-filter">
 								<div class="divider-block">
@@ -81,11 +81,11 @@
 					<div class="col-sm-9">
 						<div class="head-temp">
 							<div class="head-banner">
-<!--								<img src="<?php echo base_url('images/watchinc/watch.png');?>" class="img-responsive pull-left">-->
+								<!-- <img src="<?php echo base_url('images/watchinc/watch.png');?>" class="img-responsive pull-left"> -->
 								<?php if ($page_title=="New Arrivals" || $page_title=="Sale"):?>
 									<h4 class="title-watch">PRODUCT WATCHES</h4>
 								<?php elseif ($page_title=="Search"):?>
-									<h4 class="title-watch">SEARCH PRODUCT - <?php echo $term;?></h4> 
+									<h4 class="title-watch">SEARCH PRODUCT - <?php echo $term;?></h4>
 								<?php else:?>
 									<h4 class="title-watch">PRODUCT WATCHES  - <?php echo $category->seo_title;?></span></h4>
 									<?php if (!empty($category->image)):?>
@@ -108,7 +108,7 @@
 								<?php endif;?>
 							</div>
 							<div class="filter-product"></div>
-							<div class="filter-container">
+							<div class="filter-container-fluid">
 								<?php
 								$current_url = explode("?", $_SERVER['REQUEST_URI']);
 								?>
@@ -142,37 +142,33 @@
 										?>
 										<div class="col-sm-3 thumbnail-category">
 											<a href="<?php echo base_url($product->slug);?>" class="thumb">
-												
-                                                <div class="desc">
-													<?php if (!empty($product->brand['brand_name'])):?><p class="brand-name"><?php echo strtoupper($product->brand['brand_name']);?></p><?php endif;?>
-														<p class="name"><?php echo $product->name;?></p>
+												<div class="item">
+													<div class="desc">
+														<?php if (!empty($product->brand['brand_name'])):?><p class="brand-name"><?php echo strtoupper($product->brand['brand_name']);?></p><?php endif;?>
+															<p class="name"><?php echo $product->name;?></p>
+															<?php if($product->sale == 1 && $product->saleprice > 0):
+																$date = strtotime(date("Y-m-d"));
+																if (strtotime($product->sale_enable_on) <= $date && strtotime($product->sale_disable_on) > $date):
+															?>
+														<?php endif;
+														else: ?>
+														<?php endif;?>
+													</div>
+													<div class="image"><?php echo $photo; ?></div>
+													<div class="desc">
 														<?php if($product->sale == 1 && $product->saleprice > 0):
-															$date = strtotime(date("Y-m-d"));
-															if (strtotime($product->sale_enable_on) <= $date && strtotime($product->sale_disable_on) > $date):
-														?>
-													
-													<?php endif;
-													else: ?>
-														
-													<?php endif;?>
-												</div>
-                                                
-                                                <div class="image">
-													<?php echo $photo; ?>
-												</div>
-												<div class="desc">
-													<?php if($product->sale == 1 && $product->saleprice > 0):
-															$date = strtotime(date("Y-m-d"));
-															if (strtotime($product->sale_enable_on) <= $date && strtotime($product->sale_disable_on) > $date):
-														?>
-														<p><s><?php echo format_currency($product->price); ?></s></p>
-														<p class="price-tag"><?php echo format_currency($product->saleprice); ?></p>
-													<?php else: ?>
-														<p class="price-tag"><?php echo format_currency($product->price); ?></p><br/>
-													<?php endif;
-													else: ?>
-														<p class="price-tag"><?php echo format_currency($product->price); ?></p><br/>
-													<?php endif;?>
+																$date = strtotime(date("Y-m-d"));
+																if (strtotime($product->sale_enable_on) <= $date && strtotime($product->sale_disable_on) > $date):
+															?>
+															<p><s><?php echo format_currency($product->price); ?></s></p>
+															<p class="price-tag"><?php echo format_currency($product->saleprice); ?></p>
+														<?php else: ?>
+															<p class="price-tag"><?php echo format_currency($product->price); ?></p><br/>
+														<?php endif;
+														else: ?>
+															<p class="price-tag"><?php echo format_currency($product->price); ?></p><br/>
+														<?php endif;?>
+													</div>
 												</div>
 											</a>
 										</div>

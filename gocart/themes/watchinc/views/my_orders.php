@@ -26,15 +26,15 @@ $(document).ready(function(){
 		else
 		{
 			alert('<?php echo lang('error_must_have_address');?>');
-		}	
+		}
 	});
-	
+
 	$('.edit_address').click(function(){
 		$.fn.colorbox({	href: '<?php echo site_url('secure/address_form'); ?>/'+$(this).attr('rel'), width:'600px', height:'500px'}, function(){
 			//$('input:submit, input:button, button').button();
 		});
 	});
-	
+
 	if ($.browser.webkit) {
 	    $('input:password').attr('autocomplete', 'off');
 	}
@@ -52,7 +52,7 @@ function set_default(address_id, type)
 
 </script>
 <!-- Container -->
-<div class="container">
+<div class="container-fluid">
 <div class="thing">
   <div class="row">
 	<div class="col-sm-2">
@@ -92,7 +92,7 @@ function set_default(address_id, type)
 		<div class="panel-body">
 			  <?php
 				if($orders):
-					foreach($orders as $order): 
+					foreach($orders as $order):
 			  ?>
 				 <div class="row seperator">
 					<div class="col-sm-2">
@@ -102,11 +102,11 @@ function set_default(address_id, type)
 						</div>
 						<div class="col-xs-6 col-sm-12">
 						  <p class="text-center">
-							<?php $d = format_date($order->ordered_on); 
-							
+							<?php $d = format_date($order->ordered_on);
+
 							$d = explode(' ', $d);
 							echo $d[0].' '.$d[1].', '.$d[3];
-							
+
 							?>
 						  </p>
 						</div>

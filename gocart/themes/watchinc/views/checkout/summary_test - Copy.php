@@ -3,7 +3,7 @@
 
 <?php if(!$login_check):?>
 <!-- Container -->
-<div class="container">
+<div class="container-fluid">
 	<div class="greet">
 		<h3>HELLO VALUE CUSTOMER</h3>
 		<p>It Looks Like you wish to order without creating an account. So complete the form address below</p>

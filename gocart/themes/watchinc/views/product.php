@@ -3,7 +3,7 @@
 ?>
 
 			<div class="product">
-				<div class="container" style="padding-top: 45px;">
+				<div class="container-fluid">
 					<div class="def-temp">
 						<div class="head">
 							<div class="row">
@@ -101,32 +101,25 @@
 											<h3 class="name"><?php echo strtoupper($product->name);?></h3>
 										</div>
 										<div class="description">
-											<div style="overflow: auto;">
+											<div>
 												<div class="col-xs-6">
-													<span class="code">Product Code: 
-                                                        <b><?php if (!empty($product->sku)) echo $product->sku;?></b>
-                                                    </span>
+													<span class="code">Product Code: <b><?php if (!empty($product->sku)) echo $product->sku;?></b></span>
 													<div class="clearfix"></div>
-                                                    <?php if ((bool)$product->track_stock && $product->quantity < 1): ?>
+													<?php if ((bool)$product->track_stock && $product->quantity < 1): ?>
 														<span class="status-instock">OUT OF STOCK</span>
 													<?php else:?>
 														<span class="status-instock">IN STOCK</span>
 													<?php endif;?>
-<!--													<p><a href="javascript:void(0);" id="godetails">See Description</a></p>-->
 													<br/><br/>
-                                                    
 													<p class="product-description"><?php echo $product->description; ?></p>
-                                                    
-                                                    
 													<?php if ((bool)$product->track_stock && $product->quantity >= 10): ?>
 														<p class="status-count">(Amount stock 10+)</p>
 													<?php else:?>
 														<p class="status-count">Only <?php echo $product->quantity;?> left in stock</p>
 													<?php endif;?>
-                                                    
-                                                    <br/>
-                                                    <script type="text/javascript" async="" src="//staticw2.yotpo.com/PyQd6tQsY2e6Z0TYYW9GE0d8YNbQOb7WTynU6SST/widget.js"></script>
-													<div style="pull-right" class="yotpo bottomLine"
+													<br/>
+													<script type="text/javascript" async="" src="//staticw2.yotpo.com/PyQd6tQsY2e6Z0TYYW9GE0d8YNbQOb7WTynU6SST/widget.js"></script>
+													<div class="yotpo bottomLine"
 														data-appkey="PyQd6tQsY2e6Z0TYYW9GE0d8YNbQOb7WTynU6SST"
 														data-domain="watchinc.co.id"
 														data-product-id="<?php echo $product->sku;?>"
@@ -137,68 +130,58 @@
 														data-description=""
 														data-bread-crumbs="<?php echo $category_product;?>">
 													</div>
-													
 												</div>
-												<div class="col-xs-6" style="background: #ffec0f;">
-													
-													<?php if (!empty($brand)):?><img src="<?php echo $brand->box_image;?>" width="100%"/><?php endif;?>
-                                                    
-                                                    <div class="price-tag-2">
-                                                        <?php if ($product->sale == 1 && $product->saleprice > 0):
-                                                            $date = strtotime(date("Y-m-d"));
-                                                            if(strtotime($product->sale_enable_on) <= $date && strtotime($product->sale_disable_on) > $date):
-                                                        ?>
-                                                                <p class="price-strike"><?php echo format_currency($product->price); ?></p>
-                                                                <p class=""><?php echo format_currency($product->saleprice); ?></p>
-                                                            <?php else:?>
-                                                                <p class=""><?php echo format_currency($product->price); ?></p>
-                                                            <?php endif;?>
-                                                        <?php else:?>
-                                                            <p class=""><?php echo format_currency($product->price); ?></p>
-                                                        <?php endif;?>
-                                                    </div>
-                                                    
-                                                    
-                                                    <div class="actions" style="overflow: auto;">
-														<center>
-                                                            <form class="form-inline" role="form" action="cart/add_to_cart" method="post" accept-charset="utf-8" name="myform">
-                                                                <input type="hidden" name="cartkey" value="<?php echo $this->session->flashdata('cartkey');?>" />
-                                                                <input type="hidden" name="id" value="<?php echo $product->id?>"/>
-                                                                <div class="form-group">
-                                                                    <label for="quantity" class="control-label">JUMLAH</label>
-                                                                    <select class="form-control" name="quantity">
-                                                                        <option value="1">1</option>
-                                                                        <option value="2">2</option>
-                                                                        <option value="3">3</option>
-                                                                        <option value="4">4</option>
-                                                                        <option value="5">5</option>
-                                                                    </select>
-                                                                </div>
-                                                                <div class="clearfix"></div>
-
-                                                                <button type="submit" class="btn btn-add-cart">
-                                                                    <i class="fa fa-cart-arrow-down"></i> Add to Cart
-                                                                </button>
-                                                            </form>
-                                                        </center>
+												<div class="col-xs-6">
+													<div class="infos">
+														<?php if (!empty($brand)):?><img src="<?php echo $brand->box_image;?>" width="100%"/><?php endif;?>
+														<div class="price-tag-2">
+															<?php if ($product->sale == 1 && $product->saleprice > 0):
+																$date = strtotime(date("Y-m-d"));
+																if(strtotime($product->sale_enable_on) <= $date && strtotime($product->sale_disable_on) > $date):
+															?>
+															<p class="price-strike"><?php echo format_currency($product->price); ?></p>
+															<p class=""><?php echo format_currency($product->saleprice); ?></p>
+															<?php else:?>
+																<p class=""><?php echo format_currency($product->price); ?></p>
+															<?php endif;?>
+															<?php else:?>
+																<p class=""><?php echo format_currency($product->price); ?></p>
+															<?php endif;?>
+														</div>
+														<div class="actions">
+															<center>
+																<form class="form-inline" role="form" action="cart/add_to_cart" method="post" accept-charset="utf-8" name="myform">
+																	<input type="hidden" name="cartkey" value="<?php echo $this->session->flashdata('cartkey');?>" />
+																	<input type="hidden" name="id" value="<?php echo $product->id?>"/>
+																	<div class="form-group">
+																		<label for="quantity" class="control-label">JUMLAH</label>
+																		<select class="form-control" name="quantity">
+																			<option value="1">1</option>
+																			<option value="2">2</option>
+																			<option value="3">3</option>
+																			<option value="4">4</option>
+																			<option value="5">5</option>
+																		</select>
+																	</div>
+																	<div class="clearfix"></div>
+																	<button type="submit" class="btn btn-add-cart"><i class="fa fa-cart-arrow-down"></i> Add to Cart</button>
+																</form>
+															</center>
+														</div>
+														<div class="share">
+															<ol class="breadcrumb">
+																<li>SHARE</li>
+																<li><a href="" class="facebook"></a></li>
+																<li><a href="" class="twitter"></a></li>
+																<li><a href="" class="youtube"></a></li>
+																<li><a href="" class="instagram"></a></li>
+																<li><a href="" class="googleplus"></a></li>
+															</ol>
+														</div>
 													</div>
-                                                    
-                                                    <div class="share">
-                                                        <ol class="breadcrumb">
-                                                            <li>SHARE</li>
-                                                            <li><a href="" class="facebook"></a></li>
-                                                            <li><a href="" class="twitter"></a></li>
-                                                            <li><a href="" class="youtube"></a></li>
-                                                            <li><a href="" class="instagram"></a></li>
-                                                            <li><a href="" class="googleplus"></a></li>
-                                                        </ol>
-                                                    </div>
-                                                    
 												</div>
-												
 											</div>
 										</div>
-										
 									</div>
 								</div>
 							</div>
@@ -218,9 +201,6 @@
 									<div class="content">
 										<div class="tab-content as-title-content">
 											<div role="tabpanel" class="tab-pane active" id="details">
-												<div class="section">
-													
-												</div>
 												<div class="section">
 													<p>SPECIFICATIONS</p>
 													<div class="as-table">
@@ -252,12 +232,12 @@
 													<script type="text/javascript">
 														(function e(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="//staticw2.yotpo.com/PyQd6tQsY2e6Z0TYYW9GE0d8YNbQOb7WTynU6SST/widget.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();
 													</script>
-													<div class="yotpo yotpo-main-widget" 
-														data-product-id="<?php echo strtoupper($product->sku);?>" 
-														data-name="<?php echo $product->name;?>" 
+													<div class="yotpo yotpo-main-widget"
+														data-product-id="<?php echo strtoupper($product->sku);?>"
+														data-name="<?php echo $product->name;?>"
 														data-url="<?php echo base_url('$product>slug');?>"
-														data-image-url="<?php echo $primary_url;?>" 
-														data-description="" 
+														data-image-url="<?php echo $primary_url;?>"
+														data-description=""
 														data-yotpo-element-id="1">
 													</div>
 												</div>
@@ -294,32 +274,37 @@
 										?>
 											<div class="col-xs-12">
 												<a href="<?php echo site_url($productRelated->slug); ?>" class="thumb">
-													<div class="image">
-														<?php echo $photo;?>
-													</div>
-													<div class="desc text-center">
-														<p class="brand-name">
-															<?php
-															$string = (strlen($productRelated->name) > 40) ? substr($productRelated->name,0,40).'...' : $productRelated->name;
-															echo $string;
-															?>
-														</p>
-														<?php if ((bool)$productRelated->track_stock && $productRelated->quantity < 1): ?>
-															<p class="red italic"><?php echo lang('out_of_stock');?></p>
-														<?php else:?>
-															<?php if ($productRelated->sale == 1 && $productRelated->saleprice > 0):
-																$date = strtotime(date("Y-m-d"));
-																if (strtotime($productRelated->sale_enable_on) <= $date && strtotime($productRelated->sale_disable_on) > $date):
-															?>
-																<p class="price-strike price-tag"><?php echo format_currency($productRelated->price); ?></p>
-																<p class="price-tag"><?php echo format_currency($productRelated->saleprice); ?></p>
-															<?php else: ?>
-																<p class="price-tag"><?php echo format_currency($productRelated->price); ?></p><br/>
-															<?php endif;
-															else: ?>
-																<p class="price-tag"><?php echo format_currency($productRelated->price); ?></p><br/>
+													<div class="item">
+														<div class="desc">
+															<p class="brand-name">
+																<?php
+																$string = (strlen($productRelated->name) > 40) ? substr($productRelated->name,0,40).'...' : $productRelated->name;
+																echo $string;
+																?>
+															</p>
+															<p class="name"><?php echo $product->name;?></p>
+														</div>
+														<div class="image">
+															<?php echo $photo;?>
+														</div>
+														<div class="desc">
+															<?php if ((bool)$productRelated->track_stock && $productRelated->quantity < 1): ?>
+																<p class="red italic"><?php echo lang('out_of_stock');?></p>
+															<?php else:?>
+																<?php if ($productRelated->sale == 1 && $productRelated->saleprice > 0):
+																	$date = strtotime(date("Y-m-d"));
+																	if (strtotime($productRelated->sale_enable_on) <= $date && strtotime($productRelated->sale_disable_on) > $date):
+																?>
+																	<p class="price-strike price-tag"><?php echo format_currency($productRelated->price); ?></p>
+																	<p class="price-tag"><?php echo format_currency($productRelated->saleprice); ?></p>
+																<?php else: ?>
+																	<p class="price-tag"><?php echo format_currency($productRelated->price); ?></p><br/>
+																<?php endif;
+																else: ?>
+																	<p class="price-tag"><?php echo format_currency($productRelated->price); ?></p><br/>
+																<?php endif;?>
 															<?php endif;?>
-														<?php endif;?>
+														</div>
 													</div>
 												</a>
 											</div>

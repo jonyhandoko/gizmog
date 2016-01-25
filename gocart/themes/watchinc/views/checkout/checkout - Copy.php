@@ -53,7 +53,7 @@
 			$.post('<?php echo site_url('checkout/customer_form'); ?>', function(data){
 				// populate the form with their information
 				$('#customer_info_fields').html(data);
-				// $('input:button, input:submit, button').button();		
+				// $('input:button, input:submit, button').button();
 			});
 		}
 
@@ -97,7 +97,7 @@
 	</script>
 
 	<div class="product">
-		<div class="container" style="padding-top: 25px">
+		<div class="container-fluid" style="padding-top: 25px">
 			<div class="def-temp">
 				<div class="arrow-steps">
 					<div class="row">
@@ -139,7 +139,7 @@
 										<img alt="loading" src="<?php echo base_url('images/ajax-loader.gif');?>"/>
 									</div>
 								</div>
-								<div id="submit_button_container" style="display:none; text-align:center; padding-top:10px;">
+								<div id="submit_button_container-fluid" style="display:none; text-align:center; padding-top:10px;">
 									<input type="hidden" name="process_order" value="true">
 								</div>
 							</div>

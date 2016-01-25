@@ -1,11 +1,11 @@
 <?php include('header.php');?>
-<div class="container">
+<div class="container-fluid">
 <div class="row">
 <div class="col-sm-2">
 <?php include('left_content_help.php');?>
 </div>
 <div class="col-sm-10">
-	<?php 
+	<?php
 		$arg = explode(' ', $page->title);
 	?>
 	<h3 class="checkoutTitle" style="font-size: 16px;"><span class="grey"><?php echo $arg['0'];?></span> <?php if(isset($arg['1'])) echo $arg['1'];?> <?php if(isset($arg['2'])) echo $arg['2']?></h3>
